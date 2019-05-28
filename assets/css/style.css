@@ -45,10 +45,10 @@ body {
 .main {
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.5);
-  padding: 8px;
+  padding: 0.5em;
   line-height: 20px;
-  width: 20em;
-  height: 12em;
+  width: 19em;
+  height: 13em;
   border: 3px dotted rgb(200, 20, 255);
 }
 .container2 {
@@ -56,6 +56,7 @@ body {
   position: absolute;
   top: 30%;
   left: 65%;
+  font-family: "Montserrat", sans-serif;
 }
 
 .center {
@@ -71,13 +72,14 @@ body {
   line-height: 60px;
   letter-spacing: 3px;
   font-family: "Montserrat", cursive;
-  width: 10em;
-  height: 10em;
+  width: 6em;
+  height: 5.5em;
   text-align: center;
-  top: 30%;
-  right: 80%;
-  background-color: rgba(250, 250, 250, 0.7);
-  padding: 6px;
+  top: -25%;
+  right: 220%;
+  background-color: rgba(250, 250, 250, 0.6);
+  outline: 3px dotted rgb(200, 20, 255);
+  padding: 0.5em;
 }
 .warn {
   text-align: center;
