@@ -1,3 +1,62 @@
 .css-Selector {
-font-family: 'Shadows Into Light Two', cursive;
+  font-family: "Shadows Into Light Two", cursive;
+}
+body {
+  background-image: url("../images/background.jpg");
+  background-repeat: repeat;
+  background-color: black;
+}
+.container {
+  width: 960px;
+  margin: auto;
+}
+.image {
+  width: 12em;
+  height: 15em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header {
+  font-family: "Shadows Into Light Two", cursive;
+  color: rgb(200, 20, 255);
+  font-size: 4em;
+  font-weight: bold;
+  text-align: center;
+  margin: 0.5em 4em 0.2em 4em;
+  outline: 5px dashed rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.5);
+}
+.instructions {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5em;
+  font-weight: bolder;
+  color: yellow;
+  text-align: center;
+}
+.fancy {
+}
+.main {
+  display: inline-block;
+  float: right;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 8px;
+  line-height: 20px;
+  width: 250px;
+  box-shadow: 1em 1em 5em rgba(0, 0, 0, 0.5);
+}
+.container2 {
+  height: 10em;
+  position: relative;
+  float: right;
+  border: 3px dotted rgb(200, 20, 255);
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
