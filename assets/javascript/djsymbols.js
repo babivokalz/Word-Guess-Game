@@ -2,7 +2,7 @@ var djSymbols = [
   { dj: "Alan Walker", image: "alan walker.jpg" },
   { dj: "Allison Wonderland", image: "allison wonderland.png" },
   { dj: "Bassnectar", image: "bassnectar.jpeg" },
-  { dj: "Deadmau5", image: "deadmau5.jpg" },
+  { dj: "Deadmaus", image: "deadmaus.jpg" },
   { dj: "Don Diablo", image: "don diablo.jpeg" },
   { dj: "Excision", image: "excision.jpg" },
   { dj: "Ghastly", image: "ghastly.png" },

@@ -5,6 +5,34 @@ var spanLetters = document.getElementById("letters");
 var spanWarning = document.getElementById("warning");
 var spanImage = document.getElementById("img");
 
+var djSymbols = [
+  { dj: "Alan Walker", image: "alan walker.jpg" },
+  { dj: "Allison Wonderland", image: "allison wonderland.png" },
+  { dj: "Bassnectar", image: "bassnectar.jpeg" },
+  { dj: "Deadmaus", image: "deadmaus.jpg" },
+  { dj: "Don Diablo", image: "don diablo.jpeg" },
+  { dj: "Excision", image: "excision.jpg" },
+  { dj: "Ghastly", image: "ghastly.png" },
+  { dj: "Gryffin", image: "gryffin.jpeg" },
+  { dj: "Illenium", image: "illenium.jpeg" },
+  { dj: "Knife Party", image: "knife party.jpeg" },
+  { dj: "Marshmello", image: "marshmello.jpg" },
+  { dj: "Martin Garrix", image: "martin garrix.jpg" },
+  { dj: "Odesza", image: "odesza.jpg" },
+  { dj: "Porter Robinson", image: "porter robinson.png" },
+  { dj: "Rezz", image: "Rezz.jpg" },
+  { dj: "Said the Sky", image: "said the sky.png" },
+  { dj: "Seven Lions", image: "seven lions.jpeg" },
+  { dj: "Skrillex", image: "skrillex.jpg" },
+  { dj: "Slander", image: "slander.jpg" },
+  { dj: "Slushii", image: "slushii.jpg" },
+  { dj: "Tiesto", image: "tiesto.jpg" },
+  { dj: "Tritonal", image: "tritonal.png" },
+  { dj: "Valentino Khan", image: "valentino khan.jpg" },
+  { dj: "Yellow Claw", image: "yellow claw.png" },
+  { dj: "Zhu", image: "zhu.jpeg" }
+];
+
 var game = {
   wins: 0,
   lettersRight: [],
@@ -24,7 +52,7 @@ var game = {
       return newString;
     }
 
-    spanWins.textContent = this.wins;
+    spanWins.textContent = game.wins;
     spanWord.innerHTML = formatWord(this.wordGuessed);
     spanGuesses.textContent = this.numGuesses - this.lettersWrong.length;
     spanLetters.innerHTML = formatWord(this.lettersWrong);
@@ -39,10 +67,10 @@ var game = {
       return Math.floor(Math.random() * (max - min)) + min;
     }
 
-    var words = JSON.parse(djSymbols);
+    var words = djSymbols;
+    console.log(djSymbols);
     var randomInt = getRandomInt(1, words.length - 1);
-
-    this.wordSecret = words[randomInt].breed;
+    this.wordSecret = words[randomInt].dj;
     this.wordURL = words[randomInt].image;
   },
 
@@ -83,7 +111,7 @@ var game = {
       guessedLetter = input.toLowerCase();
 
       if (this.wordSecret.toLowerCase().indexOf(guessedLetter) != -1) {
-        if (this.lettersRight.indexOf(guessedLetter) == -1) {
+        if (this.lettersRight.indexOf(guessedLetter) == 0) {
           this.lettersRight.push(guessedLetter);
         }
       } else {
