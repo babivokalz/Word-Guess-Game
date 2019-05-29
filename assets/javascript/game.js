@@ -44,6 +44,7 @@ var game = {
   numGuesses: 10,
 
   displayGame: function() {
+    console.warn("display ", new Date());
     function formatWord(string) {
       var newString = "";
       for (var i = 0; i < string.length; i++) {
@@ -101,19 +102,21 @@ var game = {
   },
 
   getGuess: function(input) {
-    function isLetter(letter) {
-      return letter.length === 1 && letter.match(/[a-z]/i);
-    }
+    const isLetter = !!(input && input.length === 1 && input.match(/[a-z]/i));
 
-    var guessedLetter = "";
-
-    if (isLetter(input)) {
-      guessedLetter = input.toLowerCase();
-
-      if (this.wordSecret.toLowerCase().indexOf(guessedLetter) != -1) {
-        this.lettersRight.push(guessedLetter);
+    if (isLetter) {
+      const guessedLetter = input.toLowerCase();
+      const isCorrectLetterGuess = this.wordSecret
+        .toLowerCase()
+        .includes(guessedLetter);
+      if (isCorrectLetterGuess) {
+        // Only push if the correct letter is not yet in the array.
+        if (!this.lettersRight.includes(guessedLetter)) {
+          this.lettersRight.push(guessedLetter);
+        }
       } else {
-        if (this.lettersWrong.indexOf(guessedLetter) == -1) {
+        // Only push if the incorrect letter is not yet in the array.
+        if (!this.lettersWrong.includes(guessedLetter)) {
           this.lettersWrong.push(guessedLetter);
         }
       }
