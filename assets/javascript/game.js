@@ -111,9 +111,7 @@ var game = {
       guessedLetter = input.toLowerCase();
 
       if (this.wordSecret.toLowerCase().indexOf(guessedLetter) != -1) {
-        if (this.lettersRight.indexOf(guessedLetter) == 0) {
-          this.lettersRight.push(guessedLetter);
-        }
+        this.lettersRight.push(guessedLetter);
       } else {
         if (this.lettersWrong.indexOf(guessedLetter) == -1) {
           this.lettersWrong.push(guessedLetter);
@@ -129,10 +127,9 @@ var game = {
     for (var iR = 0; iR < this.lettersRight.length; iR++) {
       for (var iW = 0; iW < this.wordSecret.length; iW++) {
         if (this.wordSecret[iW].toLowerCase() == this.lettersRight[iR]) {
-          this.wordGuessed = this.wordGuessed.replaceAt(
-            iW,
-            this.wordSecret[iW]
-          );
+          var wordArray = this.wordGuessed.split("");
+          wordArray[iW] = this.wordSecret[iW];
+          this.wordGuessed = wordArray.join();
         }
       }
     }
