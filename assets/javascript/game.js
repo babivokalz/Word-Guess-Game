@@ -69,8 +69,7 @@ var game = {
     }
 
     var words = djSymbols;
-    console.log(djSymbols);
-    var randomInt = getRandomInt(1, words.length - 1);
+    var randomInt = getRandomInt(0, words.length);
     this.wordSecret = words[randomInt].dj;
     this.wordURL = words[randomInt].image;
   },
@@ -136,7 +135,8 @@ var game = {
       if (hasCorrectLetterGuessed) {
         this.wordGuessed = this.wordGuessed + this.wordSecret.charAt(i);
       } else {
-        this.wordGuessed = this.wordGuessed + "_";
+        this.wordGuessed =
+          this.wordGuessed + (this.wordSecret.charAt(i) === " " ? " " : "_");
       }
     }
   },
