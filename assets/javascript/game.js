@@ -127,13 +127,16 @@ var game = {
   },
 
   updateGuess: function() {
-    for (var iR = 0; iR < this.lettersRight.length; iR++) {
-      for (var iW = 0; iW < this.wordSecret.length; iW++) {
-        if (this.wordSecret[iW].toLowerCase() == this.lettersRight[iR]) {
-          var wordArray = this.wordGuessed.split("");
-          wordArray[iW] = this.wordSecret[iW];
-          this.wordGuessed = wordArray.join();
-        }
+    // Always reset this.wordGuessed.
+    this.wordGuessed = "";
+    for (var i = 0; i < this.wordSecret.length; i++) {
+      const hasCorrectLetterGuessed = this.lettersRight.includes(
+        this.wordSecret.charAt(i).toLowerCase()
+      );
+      if (hasCorrectLetterGuessed) {
+        this.wordGuessed = this.wordGuessed + this.wordSecret.charAt(i);
+      } else {
+        this.wordGuessed = this.wordGuessed + "_";
       }
     }
   },
